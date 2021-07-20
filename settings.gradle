@@ -2,3 +2,4 @@ rootProject.name = 'thejava-01'
 
 include 'chapter02'
 include 'chapter02:CodeCoverage'
+include 'chapter02:ArabbitInHat'

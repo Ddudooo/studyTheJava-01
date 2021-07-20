@@ -1,0 +1,7 @@
+plugins {
+    id "net.bytebuddy.byte-buddy-gradle-plugin" version "1.11.8"
+}
+
+dependencies {
+    compile 'net.bytebuddy:byte-buddy:1.11.8'
+}
