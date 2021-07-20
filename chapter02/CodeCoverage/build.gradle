@@ -1,0 +1,22 @@
+plugins {
+    id 'jacoco'
+}
+
+// 커버리지 검증 수준 정의 설정
+tasks.jacocoTestCoverageVerification {
+    violationRules {
+        // rule 은 여러개 사용 가능
+        rule {
+            enabled = true    // 사용 여부
+            element = 'CLASS' // 측정 단위
+
+            limit { // 룰의 상세 설정
+                counter = 'LINE' // 커버리 측정의 최소 단위
+                value = 'COVERAGERATIO' // 측정한 단위의 표기 방식
+                minimum = 0.50 // 커버리지의 최소값
+            }
+
+            excludes = [] // 커버리지 측정 제외 범위
+        }
+    }
+}
