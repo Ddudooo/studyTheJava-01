@@ -7,3 +7,4 @@ include 'chapter02:JavaAgent'
 
 include 'chapter03'
 include 'chapter03:demo-spring-web'
+include 'chapter03:ReflectionAPI'
