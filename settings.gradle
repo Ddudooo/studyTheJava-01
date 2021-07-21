@@ -4,3 +4,6 @@ include 'chapter02'
 include 'chapter02:CodeCoverage'
 include 'chapter02:ArabbitInHat'
 include 'chapter02:JavaAgent'
+
+include 'chapter03'
+include 'chapter03:demo-spring-web'
