@@ -9,3 +9,5 @@ include 'chapter03'
 include 'chapter03:demo-spring-web'
 include 'chapter03:ReflectionAPI'
 include 'chapter03:demo-DI'
+
+include 'chapter04'
