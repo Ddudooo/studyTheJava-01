@@ -37,3 +37,23 @@
 * https://www.oodesign.com/proxy-pattern.html
 * https://en.wikipedia.org/wiki/Proxy_pattern
 * https://en.wikipedia.org/wiki/Single_responsibility_principle
+
+---
+
+# 정리
+
+다이나믹 프록시
+
+* 런타임에 인터페이스 또는 클래스의 프록시 인스턴스 또는 클래스를 만들어 사용하는 프로그래밍 기법
+
+다이나믹 프록시 사용처
+
+* 스프링 데이터 JPA
+* 스프링 AOP
+* Mockito
+* 하이버네이트 lazy initialzation
+* ...
+
+참고
+
+* http://tutorials.jenkov.com/java-reflection/dynamic-proxies.html
