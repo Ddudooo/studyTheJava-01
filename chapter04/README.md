@@ -24,3 +24,16 @@
 이 `ProxyFactory`를 통해, 다이나믹 프록시의 핵심 객체인 프록시 객체를 만들어낸다.
 
 스프링 데이터 JPA에서는 `RepositoryFactorySupport`에서 사용되고 있다.
+
+## 프록시 패턴
+
+> 어떤 객체에 대한 접근을 제어하는 용도로 대리인이나  
+> 대변인에 해당하는 객체를 제공하는 패턴
+>
+> 다른 객체에 대한 접근 제어나 가상 객체로 실제 처리시에만 처리 가능하게 하는 패턴
+
+### 참고
+
+* https://www.oodesign.com/proxy-pattern.html
+* https://en.wikipedia.org/wiki/Proxy_pattern
+* https://en.wikipedia.org/wiki/Single_responsibility_principle

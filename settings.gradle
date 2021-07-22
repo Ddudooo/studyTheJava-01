@@ -11,3 +11,4 @@ include 'chapter03:ReflectionAPI'
 include 'chapter03:demo-DI'
 
 include 'chapter04'
+include 'chapter04:proxy-demo'
