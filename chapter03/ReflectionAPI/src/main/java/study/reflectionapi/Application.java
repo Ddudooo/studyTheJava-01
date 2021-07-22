@@ -65,5 +65,16 @@ public class Application {
 		Arrays.stream(MyBook.class.getInterfaces())
 			.forEach(System.out::println);
 
+		System.out.println("==================어노테이션 출력=================");
+		Arrays.stream(Book.class.getAnnotations())
+			.forEach(System.out::println);
+
+		System.out.println("==================어노테이션 출력=================");
+		Arrays.stream(MyBook.class.getAnnotations())
+			.forEach(System.out::println);
+
+		System.out.println("==================어노테이션 출력=================");
+		Arrays.stream(MyBook.class.getDeclaredAnnotations())
+			.forEach(System.out::println);
 	}
 }
