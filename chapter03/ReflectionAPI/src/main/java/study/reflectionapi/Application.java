@@ -2,79 +2,38 @@ package study.reflectionapi;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.Arrays;
 
 public class Application {
 
-	public static void main(String[] args) {
-		System.out.println("Hello, world!");
-		Class<Book> bookClass = Book.class;
+	public static void main(String[] args)
+		throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+		Class<?> bookClass = Class.forName("study.reflectionapi.Book");
+		//bookClass.newInstance();
+		//Constructor<?> constructor = bookClass.getConstructor(null);
+		Constructor<?> constructor = bookClass.getConstructor(String.class);
+		Book book = (Book) constructor.newInstance("mybook");
+		System.out.println(book);
 
-		Book book = new Book();
-		Class<? extends Book> aClass = book.getClass();
+		Field a = Book.class.getDeclaredField("A");
+		System.out.println(a.get(null));
+		a.set(null, "AAA");
+		System.out.println(a.get(null));
 
-		try {
-			Class<?> aClass1 = Class.forName("study.reflectionapi.Book");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+		Field B = Book.class.getDeclaredField("B");
+		B.setAccessible(true);
+		System.out.println(B.get(book));
+		B.set(book, "BBB");
+		System.out.println(B.get(book));
 
-		Field[] fields = bookClass.getDeclaredFields();
-		System.out.println("===================필드 출력===================");
-		Arrays.stream(fields)
-			//.forEach(System.out::println);
-			.forEach(field -> {
-				try {
-					int modifiers = field.getModifiers();
-					System.out.printf("%s is private %b\n", field, Modifier.isPrivate(modifiers));
-					System.out.printf("%s is modifier %b\n", field, Modifier.isStatic(modifiers));
-					field.setAccessible(true);
-					System.out.printf("%s %s\n", field, field.get(book));
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-				}
-			});
+		Method c = Book.class.getDeclaredMethod("c");
+		c.setAccessible(true);
+		c.invoke(book);
 
-		Method[] methods = bookClass.getMethods();
-		System.out.println("==================메소드 출력===================");
-		Arrays.stream(methods)
-			//.forEach(System.out::println);
-			.forEach(method -> {
-				System.out
-					.printf("\t================== [%s] METHOD INFO ===================\n", method);
-				int modifiers = method.getModifiers();
-				System.out.printf("\t%s is static %b\n", method, Modifier.isStatic(modifiers));
-				System.out.printf("\t%s is private %b\n", method, Modifier.isPrivate(modifiers));
-				System.out.printf("\t%s is final %b\n", method, Modifier.isFinal(modifiers));
-				System.out.printf("\t%s is public %b\n", method, Modifier.isPublic(modifiers));
-				System.out
-					.printf("\t%s is interface %b\n", method, Modifier.isInterface(modifiers));
-				System.out
-					.printf("\t================== [%s] METHOD INFO ===================\n", method);
-			});
+		Method d = Book.class.getDeclaredMethod("sum", int.class, int.class);
 
-		Constructor<?>[] constructors = bookClass.getConstructors();
-		System.out.println("==================생성자 출력===================");
-		Arrays.stream(constructors)
-			.forEach(System.out::println);
-		System.out.println("===================부모 출력===================");
-		System.out.println(MyBook.class.getSuperclass());
-		System.out.println("==================인터페이스 출력=================");
-		Arrays.stream(MyBook.class.getInterfaces())
-			.forEach(System.out::println);
-
-		System.out.println("==================어노테이션 출력=================");
-		Arrays.stream(Book.class.getAnnotations())
-			.forEach(System.out::println);
-
-		System.out.println("==================어노테이션 출력=================");
-		Arrays.stream(MyBook.class.getAnnotations())
-			.forEach(System.out::println);
-
-		System.out.println("==================어노테이션 출력=================");
-		Arrays.stream(MyBook.class.getDeclaredAnnotations())
-			.forEach(System.out::println);
+		int invoke = (int) d.invoke(book, 1, 2);
+		System.out.println(invoke);
 	}
 }

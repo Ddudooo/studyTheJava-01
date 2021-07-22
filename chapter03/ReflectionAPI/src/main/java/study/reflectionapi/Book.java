@@ -3,36 +3,22 @@ package study.reflectionapi;
 @MyAnnotation
 public class Book {
 
-	private static String B = "BOOK";
-	private static final String C = "BOOK";
+	public static String A = "A";
 
-	@AnotherAnnotation
-	private String A = "a";
-
-	public String d = "d";
-	@AnotherAnnotation
-	protected String e = "e";
+	private String B = "B";
 
 	public Book() {
 	}
 
-	@AnotherAnnotation
-	public Book(String a, String d, String e) {
-		A = a;
-		this.d = d;
-		this.e = e;
+	public Book(String b) {
+		B = b;
 	}
 
-	@AnotherAnnotation
-	private void f() {
-		System.out.println("F");
+	private void c() {
+		System.out.println("C");
 	}
 
-	public void g() {
-		System.out.println("g");
-	}
-
-	public int h() {
-		return 100;
+	public int sum(int left, int right) {
+		return left + right;
 	}
 }
