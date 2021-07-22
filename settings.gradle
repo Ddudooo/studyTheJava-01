@@ -12,3 +12,6 @@ include 'chapter03:demo-DI'
 
 include 'chapter04'
 include 'chapter04:proxy-demo'
+
+include 'chapter05'
+include 'chapter05:lombokdemo'

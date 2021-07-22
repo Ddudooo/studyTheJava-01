@@ -1,0 +1,9 @@
+def LOMBOK_VERSION = '1.18.20'
+
+dependencies {
+    implementation "org.projectlombok:lombok:$LOMBOK_VERSION"
+    annotationProcessor "org.projectlombok:lombok:$LOMBOK_VERSION"
+
+    testImplementation "org.projectlombok:lombok:$LOMBOK_VERSION"
+    testAnnotationProcessor "org.projectlombok:lombok:$LOMBOK_VERSION"
+}
