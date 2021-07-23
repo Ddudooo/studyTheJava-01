@@ -48,3 +48,24 @@
 * http://jnb.ociweb.com/jnb/jnbJan2010.html#controversy
 * https://www.oracle.com/technetwork/articles/grid/java-5-features-083037.html
 
+---
+
+# 애노테이션 프로세서 정리
+
+## 애노테이션 프로세서 사용 예
+
+* 롬복(Lombok)
+* AutoService: java.util.ServiceLoader용 파일 생성 유틸리티
+* @Override
+* Dagger2: 컴파일 타임 DI제공
+* 안드로이드 라이브러리
+    * BUtterKinfe: @BindVIew (뷰 아이디와 애노테이션 붙인 필드 바인딩)
+    * DeepLinkDispatch: 특정 URI 링크를 Activity로 연결할 때 사용
+
+## 애노테이션 프로세서 장점
+
+* 런타임 비용이 제로
+
+## 애노테이션 프로세서 단점
+
+* 기존 클래스 코드를 변경할 때는 약간의 hack이 필요하다(ex: Lombok)

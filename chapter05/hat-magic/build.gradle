@@ -3,5 +3,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'study:magic-annotation:latest'
+    implementation 'study:magic-annotation:1.0'
+    annotationProcessor 'study:magic-annotation:1.0'
 }
