@@ -15,3 +15,5 @@ include 'chapter04:proxy-demo'
 
 include 'chapter05'
 include 'chapter05:lombokdemo'
+include 'chapter05:hat-magic'
+include 'chapter05:magic-annotation'
